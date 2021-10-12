@@ -24,7 +24,19 @@ function AgentOne() {
 
 function Agents() {
   return (
-    <AgentOne />
+    <div>
+      <Context.Consumer>
+        {
+          (context) =>(
+            <Fragment>
+              <h1>I am in Agents</h1>
+              <h2>{context.data.Agent}</h2>
+            </Fragment>
+          )
+        }
+      </Context.Consumer>
+      <AgentOne />
+    </div>
   );
 }
 
