@@ -9,11 +9,13 @@ import Register from './components/Register';
 import PrivateRoute from './Routes/PrivateRoutes';
 import PublicRoute from './Routes/PublicRoutes';
 import Logout from './components/Logout'
+import Stateing from './components/Stateing'
 
 ReactDOM.render(
     <Router>
       <Switch>
         <PublicRoute exact path='/' component={App} />
+        <PublicRoute exact path='/test' component={Stateing} />
         <PublicRoute exact  path='/login' component={Login} />
         <PrivateRoute exact path='/dashboard' component={DashBoard} />
         <PrivateRoute exact path='/logout' component={Logout}  /> 
