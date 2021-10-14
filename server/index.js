@@ -29,21 +29,21 @@ app.get('/', function(req, res) {
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
-
+// USERS
 app.get("/users",(req,res)=>{
     axios.get("https://jsonplaceholder.typicode.com/users").then((response)=>{
         return res.json({DATA:response.data})
     })
 })
 
-
+// TODOS
 app.get("/todos",(req,res)=>{
     axios.get("https://jsonplaceholder.typicode.com/todos").then((response)=>{
         return res.json({DATA:response.data})
     })
 })
 
-
+// LOGIN 
 app.post("/login",async(req,res)=>{
     const { uname , pass } = req.body;
     var data = false;
