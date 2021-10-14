@@ -22,6 +22,14 @@ const datas = [
     }
 ]
 
+// Making Build Folder as Public 
+app.use(express.static(path.join(__dirname, 'build')));
+
+app.get('/', function(req, res) {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
+
+
 app.get("/users",(req,res)=>{
     axios.get("https://jsonplaceholder.typicode.com/users").then((response)=>{
         return res.json({DATA:response.data})
